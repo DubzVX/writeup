@@ -30,8 +30,9 @@ b*main
 r
 ```
 
-We go connect in ssh, execut it, and we have our flag in the stack : password s3cret_pa55word
+We go connect in ssh, execut it, and we have our password in the stack : s3cret_pa55word
 ![Alt TAG](https://github.com/Dubzctf/writeup/blob/master/AngstromCTF2018/image/stackre1.png)
+</br>Just run it with this password and you have your flag.
 
 ### RE2 
 
