@@ -21,16 +21,17 @@ radare2 rev1_32
 ```
 ![Alt TAG](https://github.com/Dubzctf/writeup/blob/master/AngstromCTF2018/image/r2re1.png)
 </br>We can see we have a main function. 
-</br>So, go with GDB. 
+</br>So, We connect in ssh, execut it with GDB. 
 ```sh
 gdb ./rev1_32 
 #We stop at our main
 b*main
 #and run
 r
+#look our stack
+n
 ```
-
-We go connect in ssh, execut it, and we have our password in the stack : s3cret_pa55word
+We have our password in the stack : s3cret_pa55word
 ![Alt TAG](https://github.com/Dubzctf/writeup/blob/master/AngstromCTF2018/image/stackre1.png)
 </br>Just run it with this password and you have your flag.
 
@@ -168,7 +169,7 @@ AAA%AAsAABAA$AAnAACAA-AA(AADAA;AA)AAEAAaAA0AAFAAbAA1AAGAAcAA2AAHAAdAA3AAIAAeAA4A
 gdb-peda$ r 'AAA%AAsAABAA$AAnAACAA-AA(AADAA;AA)AAEAAaAA0AAFAAbAA1AAGAAcAA2AAHAAdAA3AAIAAeAA4AAJAAfAA5AAKAAgAA6AALAAhAA7AAMAAiAA8AANAAjAA9AAOAAkAAPAAlAAQAAmAARAAoAASAApAATAAqAAUAArAAVAAtAAWAAuAAXAAvAAYAAwAAZAAxAAyA'
 
 ```
-When I run it, I can see the data in my EIP : 0x41414641 ('AFAA'), so I try to fin my pattern offset with this command : 
+When I run it, I can see the data in my EIP : 0x41414641 ('AFAA'), so I try to find my pattern offset with this command : 
 ```sh
 gdb-peda$ pattern offset AFAA
 AFAA found at offset: 44
