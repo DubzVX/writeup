@@ -19,9 +19,9 @@ I used radare2 just to look all function in it.
 ```sh
 radare2 rev1_32 
 ```
-</br>
+
 ![Alt TAG](https://github.com/Dubzctf/writeup/blob/master/AngstromCTF2018/image/r2re1.png)
-</br>We can see we have a main function. 
+</br></br>We can see we have a main function. 
 </br>So, We connect in ssh, execut it with GDB. 
 ```sh
 gdb ./rev1_32 
